@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('/', 'PageController');
+Route::post('/ajax/getScaleValues', 'AjaxController@getScaleValues');
