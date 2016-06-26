@@ -10,7 +10,8 @@ use App\Scale;
 class AjaxController extends Controller
 {
 	public function getScaleValues(Request $request) {
-		dd($request);
-		//Scale::getScaleValue()
+		$request->get('scale_id');
+		$scale_value = Scale::getScaleValue($request->get('scale_id'));
+		return $scale_value;
 	}
 }

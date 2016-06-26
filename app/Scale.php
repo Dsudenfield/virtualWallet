@@ -24,17 +24,15 @@ class Scale extends Model
 				'Saturday',
 				'Sunday'
 			],
-			3 => [
-				'Monday',
-				'Tuesday',
-				'Wednesday',
-				'Thursday',
-				'Friday',
-				'Saturday',
-				'Sunday'
-			],
 		];
 
-		return $scale_value[$id];
+		if(isset($scale_value[$id])) {
+			return $scale_value[$id];
+		}
+
+		if($id == 0) {
+			return 'null';
+		}
+		return 'false';
 	}
 }

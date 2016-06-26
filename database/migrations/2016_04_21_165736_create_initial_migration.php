@@ -27,6 +27,22 @@ class CreateInitialMigration extends Migration
 			$table->string('name', 100);
 		});
 
+
+		DB::table('scale')->insert([
+			[
+				'id' => '1',
+				'name' => 'Monthly'
+			],
+			[
+				'id' => '2',
+				'name' => 'Weekly'
+			],
+			[
+				'id' => '3',
+				'name' => 'Bi Weekly'
+			],
+		]);
+
 		// Schema::create('projections', function (Blueprint $table) {
 		// 	$table->increments('id');
 		// 	$table->string('name', 100);

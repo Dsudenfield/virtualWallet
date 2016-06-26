@@ -3,52 +3,36 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Virtual Wallet</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-	
+	<!-- Style -->
 	<link rel="stylesheet" href="{{ asset('/bootstrap-3.3.5/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('/css/public.css') }}">
 	<!-- Fonts -->
-	<link rel="stylesheet" href="{{ asset('/font-awesome-4.4.0/css/font-awesome.min.css') }}">
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="{{ asset('/bootstrap-3.3.5/js/bootstrap.min.js') }}"></script>
-	<!-- Date picker -->
-	<script type="text/javascript" src="{{ asset('/js/moment.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('/js/bootstrap-datetimepicker.min.js') }}"></script>
-	<!-- Js -->
-	<script type="text/javascript" src="{{ asset('/js/global.js') }}"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+
 </head>
 
-<body>
-	
-	<header class="row">
-		<div class = "inner-header">
-			
-		</div>
-	</header>
+<body class="main-back-color">
+	<div id="main-content" class="container-fluid">
+		<header>
+		</header>
+		<main class="col-xs-12 sub-color-1 round-corners">
+			@yield('content')
+		</main>
 
-	<div id="main" class="row">
-		<div class="inner-main">
-			<div class="container">
-				{{-- @include('flash::message') --}}
-			</div>
-			<div class="row">
-				<div class="container">
-					<h1>Virtual Wallet</h1>
-					<hr>
-					@yield('content')
-				</div>
-			</div>
-		{{-- 	<br/> --}}
-			@include('errors.form_list_errors')
-		</div>
+		<footer>
+		</footer>
 	</div>
 
-	<footer>
-		@include('footer')
-	</footer>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="{{ asset('/bootstrap-3.3.5/js/bootstrap.min.js') }}"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script src="{{ asset('/js/ajax.js') }}"></script>
+	<script src="{{ asset('/js/global.js') }}"></script>
+	
 </body>
 
 </html>
